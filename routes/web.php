@@ -21,4 +21,5 @@ Route::get('logout', function () {
 Route::get('productos', 'ProductoController@getIndex');
 Route::get('productos/show/{id}', 'ProductoController@getShow');
 Route::get('productos/create', 'ProductoController@getCreate');
+Route::post('productos/create', 'ProductoController@create');
 Route::get('productos/edit/{id}', 'ProductoController@getEdit');

@@ -1,25 +1,39 @@
 <?php
 
 namespace App\Http\Controllers;
+use Request;
+//use Illuminate\Http\Request;
+use App\Producto;
+//
 
-use Illuminate\Http\Request;
 
 class ProductoController extends Controller
 {
     //
         public function getIndex()
     	{
-        	return view('productos/index');
+            $nombres = Producto::all();
+            //$nombres = formulario::orderBy('nombre','asc')->get();
+        	return view('productos/index', compact('nombres'));
     	}
     	public function getShow($id)
     	{
         	//
-        	return view('productos/show', array('id'=>$id));
+            $nombres = Producto::find($id);
+        	return view('productos/show', compact('nombres'));
     	}
+
+        public function getCreate(Request $request)
+        {
+            //
+            //Producto::create(Request::all());
+            return view('productos/create');
+        }
     	
-    	public function getCreate()
+    	public function create(Request $request)
     	{
         	//
+            Producto::create(Request::all());
         	return view('productos/create');
     	}
        	public function getEdit($id)

@@ -4,6 +4,12 @@
 
     <h1>Estas en index</h1>
 
+    <ul>    
+        @foreach($nombres as $nombre)
+            <li>{{ $nombre->nombre }}</li>
+        @endforeach
+    </ul>
+
 <!--    <div class="row">
  {{-- @php
  $key = 0;

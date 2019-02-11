@@ -3,7 +3,8 @@
 @section('content')
 
     <h1>Estas en create</h1>
- 				<form action="" method="POST">
+
+                <form action="create" method="POST">
                     {!!csrf_field()!!}
                     <span>nombre</span>
                     <input type="text" name="nombre">
