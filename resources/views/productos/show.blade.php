@@ -16,7 +16,8 @@
     <div class="col-sm-8">
 		<h2>{{$nombres->nombre}}</h2>
 		<h2>{{$nombres->categoria}}</h2>
-        {{-- TODO: Datos del producto --}}
+		<h2>{{$nombres->pendiente}}</h2>
+
 
     </div>
 </div>
