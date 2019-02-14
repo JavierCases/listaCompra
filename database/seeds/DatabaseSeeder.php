@@ -6,9 +6,28 @@ class DatabaseSeeder extends Seeder{
      
     public function run()
     {
+        self::seedUsers();
+        $this->command->info('Tabla usuarios inicializada con datos!');
         // $this->call(UsersTableSeeder::class);
         self::seedProductos();
         $this->command->info('Tabla productos inicializada con datos!');
+    }
+    private static function seedUsers(){
+        DB::table('users')->truncate(); //Para vaciar la base de datos.
+        DB::table('users')->insert([
+            'name' => 'javier',
+            'email' => 'javier@gmail.com',
+            'password' => 'javier',
+            'nombre' => 'javier',
+            'apellidos' => 'cases'
+        ]);
+        DB::table('users')->insert([
+            'name' => 'francisco',
+            'email' => 'francisco@gmail.com',
+            'password' => 'francisco',
+            'nombre' => 'francisco',
+            'apellidos' => 'lazaro'
+        ]);
     }
     private static function seedProductos()
     {
